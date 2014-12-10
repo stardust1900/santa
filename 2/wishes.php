@@ -26,6 +26,8 @@ $mysql->closeDb();
 
 include 'header.php';
 ?>
+<div class="panel panel-default">
+  <div class="panel-body">
 <table class="table">
   <tr>
   	<th>心愿</th>
@@ -53,6 +55,9 @@ include 'header.php';
   	}
   ?>
 </table>
+
+  </div>
+</div
 <?php 		
     include 'footer.php';
 ?>

@@ -68,7 +68,8 @@ $aurl = $o->getAuthorizeURL(WB_CALLBACK_URL);
 	    <h3 class="panel-title">登录</h3>
 	  </div>
 	  <div class="panel-body">
-	  	<P class="text-center"><a href="<?=$url?>"><img src="images/douban.png"></a> <a href="<?=$aurl?>"><img src="images/weibo.png"></a></P>
+	  	<P class="text-center"><a href="<?=$aurl?>"><img src="images/weibo.png"></a></P>
+	  	<P class="text-center"><a href="<?=$url?>"><img src="images/douban.png"></a></P>
 	   <form class="form-horizontal" role="form" method="POST" action="doLogin.php">
 		  <div class="form-group">
 		    <label for="email" class="col-sm-2 control-label">电邮</label>

@@ -15,7 +15,7 @@ include 'header.php';
   <div class="text-center">
       <a href="entergroup.php?gid=101"><img src="images/santa.jpg" alt="..." class="img-circle"></a>
       <div class="caption">
-        <a href="entergroup.php?gid=101"><h4>打劫圣诞老人团伙</h4></a>
+        <a href="entergroup.php?gid=101"><h4>打劫圣诞老人</h4></a>
       </div>
   </div>
   </div>

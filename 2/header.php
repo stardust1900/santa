@@ -31,6 +31,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <?php if(isset($_SESSION['login_uid'])){?>
+          <li id="profile"><a href="profile.php">资料</a></li>
           <li><a href="logout.php">注销</a></li>
          <?php }else{?>
           <li><a href="login.php">登录</a></li>

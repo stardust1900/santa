@@ -68,9 +68,11 @@ $aurl = $o->getAuthorizeURL(WB_CALLBACK_URL);
 	    <h3 class="panel-title">登录</h3>
 	  </div>
 	  <div class="panel-body">
+	  	<?php if ($_SERVER['HTTP_HOST'] == "santaclaus.sinaapp.com") { ?>
 	  	<P class="text-center"><a href="<?=$aurl?>"><img src="images/weibo.png"></a></P>
 	  	<P class="text-center"><a href="<?=$url?>"><img src="images/douban.png"></a></P>
-	   <form class="form-horizontal" role="form" method="POST" action="doLogin.php">
+	  	<?php } ?>
+	   <form class="form-horizontal" role="form" method="POST" action="doLogin.php" id="loginForm">
 		  <div class="form-group">
 		    <label for="email" class="col-sm-2 control-label">电邮</label>
 		    <div class="col-sm-10">
@@ -96,5 +98,44 @@ $aurl = $o->getAuthorizeURL(WB_CALLBACK_URL);
 
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script>
+	$().ready(function() {
+		$("#loginForm").validate(
+		{
+			rules:{
+				email:{required: true,
+	                     email: true},
+				passwd:{required: true,
+    					minlength: 5}
+			},
+			messages:{
+				email:{required: "请输入Email地址",
+	                     email: "请输入正确的email地址"},
+				passwd:{required: "请输入密码",
+    					minlength: "密码不能小于5个字符"},
+			},
+
+			highlight : function(element) {  
+                $(element).closest('.form-group').addClass('has-error');  
+            },  
+  
+            success : function(label) {  
+                label.closest('.form-group').removeClass('has-error');  
+                label.remove();  
+            },  
+  
+            errorPlacement : function(error, element) {  
+                element.parent('div').append(error);  
+            },  
+  
+            submitHandler : function(form) {  
+                form.submit();  
+            }  
+		}
+
+		);
+	});
+	</script>
   </body>
 </html>

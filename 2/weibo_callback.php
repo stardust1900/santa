@@ -34,6 +34,16 @@ if($token) {
                 die("Error:" . $mysql->errmsg());
              }
          }
+
+      $_SESSION['login_uid']=$user_id;
+      $group_sql = "select * from relation where user_id=".$user_id;
+      $joined_groups = $mysql->getData($group_sql);
+      if($joined_groups) {
+        foreach($joined_groups as $group){
+          $_SESSION['joined_groups']=$_SESSION['joined_groups'].",".$group['group_id'];
+        }
+      }
+      header("Location:index.php");
      }else{
         $weibo = new SaeTClientV2( WB_AKEY , WB_SKEY,$weibo_access_token);
         $uid_get = $weibo->get_uid();
@@ -47,21 +57,11 @@ if($token) {
          if ($mysql->errno() != 0) {
                 die("Error:" . $mysql->errmsg());
          }
-         $_SESSION['db_uid'] = $douban_user_id;
+         $_SESSION['login_uid']=$user_id;
+         header("Location:profile.php");
      }
 
-     $_SESSION['login_uid']=$user_id;
-      $group_sql = "select * from relation where user_id=".$user_id;
-      $joined_groups = $mysql->getData($group_sql);
-      if($joined_groups) {
-        foreach($joined_groups as $group){
-          $_SESSION['joined_groups']=$_SESSION['joined_groups'].",".$group['group_id'];
-        }
-      }
-
     $mysql->closeDb();
-
-header("Location:index.php");
 }else{
   $url =$o->getAuthorizeURL(WB_CALLBACK_URL);
   include 'header.php';

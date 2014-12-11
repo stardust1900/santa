@@ -1,5 +1,6 @@
 <?php
 session_start();
+$msg = "不好意思，出错了...";
 if(isset($_SESSION['info'])){
 	if("wishmade" == $_SESSION['info']) {
 		$msg="已经在该小组许过愿了，不要太贪心哦～";

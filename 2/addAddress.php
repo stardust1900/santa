@@ -10,9 +10,9 @@ if(isset($_POST['address']) && isset($_POST['realname']) && isset($_POST['phone'
 	$phone = $_POST['phone'];
 	$user_id = $_SESSION['login_uid'];
 
-
-	$insert_sql = "insert into address(user_id,address,name,phone) values(".$user_id.",'".$address."','".$realname."','".$phone."')";
 	$mysql = new SaeMysql();
+	$insert_sql = "insert into address(user_id,address,name,phone) values(".$mysql->escape($user_id).",'".$mysql->escape($address)."','".$mysql->escape($realname)."','".$mysql->escape($phone)."')";
+	
 	$mysql->runSql($insert_sql);
 	if( $mysql->errno() != 0 ){
      die( "Error:" . $mysql->errmsg());

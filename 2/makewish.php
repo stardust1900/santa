@@ -43,7 +43,7 @@ include 'header.php';
     </div>
 
 
-    <form class="form-horizontal" role="form" method="POST" action="doWish.php">
+    <form class="form-horizontal" role="form" method="POST" action="doWish.php" id="wishForm">
     <input type="hidden" id="user_id" name="user_id" value="<?=$user_id?>"/>
     <input type="hidden" id="group_id" name="group_id" value="<?=$group_id?>"/>
   <div class="form-group">
@@ -66,7 +66,40 @@ include 'header.php';
     </div>
   </div>
 </form>
+<script src="js/jquery.validate.min.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+  $("#wishForm").validate(
+    {
+      rules:{
+        content:"required",
+        memo:"required"
+      },
+      messages:{
+        content:"请输入心愿",
+        memo:"请输入悄悄话"
+      },
 
+      highlight : function(element) {  
+                $(element).closest('.form-group').addClass('has-error');  
+            },  
+  
+            success : function(label) {  
+                label.closest('.form-group').removeClass('has-error');  
+                label.remove();  
+            },  
+  
+            errorPlacement : function(error, element) {  
+                element.parent('div').append(error);  
+            },  
+  
+            submitHandler : function(form) {  
+                form.submit();  
+            }  
+    }
+    );
+});
+</script>
 <?php 		
     include 'footer.php';
 ?>

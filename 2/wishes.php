@@ -57,7 +57,7 @@ include 'header.php';
 </table>
 
   </div>
-</div
+</div>
 <?php 		
     include 'footer.php';
 ?>

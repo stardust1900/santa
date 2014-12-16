@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['login_uid'])){
     header("Location:login.php");
-}
+}else{
 
 if(!isset($_GET['wid']) ||!isset($_GET['gid']) || !isset($_SESSION['joined_groups'])){
     header("Location:index.php");
@@ -32,6 +32,8 @@ if($wish){
 	}
 	$mysql->closeDb();
 	header("Location:mygifts.php");
+}
+
 }
 
 ?>

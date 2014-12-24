@@ -47,7 +47,7 @@ include 'header.php';
 	<td><a href="takeWish.php?wid=<?=$wish['id']?>&gid=<?=$group_id?>" class="btn btn-danger active" role="button">领取</a></td>
 	<?php }else {?>
 	<td><span class="label label-default">已领取</span></td>
-	<td><a href="#" class="btn btn-default active" role="button">已被领取</a></td>
+	<td><a href="#" class="btn btn-default" role="button">领取</a></td>
 	<?php }?>
 </tr>
   <?php

@@ -14,6 +14,7 @@ if(isset($_POST['code']) && isset($_POST['group_id'])) {
 		if($code == $group['code']) {
 			$insert_sql = "insert into relation (user_id,group_id) values(".$user_id.",".$group['id'].")";
 			$mysql->runSql($insert_sql);
+			$mysql->closeDb();
 			$_SESSION['joined_groups']=$_SESSION['joined_groups'].",".$group['id'];			
 			header("Location:group.php?gid=".$group['id']);
 		}else{

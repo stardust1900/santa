@@ -38,6 +38,7 @@ insert into groups(name,about,icon,create_by,create_time,code) values ('打劫�
 insert into groups(name,about,icon,create_by,create_time,code) values ('一分钟读书会','山上的朋友，让我听到你的声音','images/reading.jpg',1000,NOW(),'文艺文艺最文艺');
 insert into groups(name,about,icon,create_by,create_time,code) values ('王一刀的朋友们','王一刀是最帅的','images/yidao.jpg',1000,NOW(),'王一刀好帅');
 insert into groups(name,about,icon,create_by,create_time,code) values ('老少女联盟','永远少女心','images/moon.jpg',1000,NOW(),'年轻美丽');
+insert into groups(name,about,icon,create_by,create_time,code) values ('罗辑思维','死磕自己,愉悦大家','images/luoji.jpg',1000,NOW(),'死磕');
 insert into groups(name,about,icon,create_by,create_time,code) values ('通联支付','让资金更流畅,让支付更便捷','images/allinpay.jpg',1000,NOW(),'全力以赴');
 
 CREATE TABLE IF NOT EXISTS relation (

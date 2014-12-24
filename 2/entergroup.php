@@ -12,6 +12,11 @@ if(!$group){
 	 header("Location:404.php");
 }
 
+$joined_groups = $_SESSION['joined_groups'];
+if(strstr($joined_groups.",",",".$group_id.",")){
+   header("Location:group.php?gid=".$group_id);
+}
+
 $member_sql = "select * from user where id in (select user_id from relation where group_id=".$mysql->escape($group_id).")";
 $members =  $mysql->getData($member_sql);
 

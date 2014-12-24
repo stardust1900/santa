@@ -48,6 +48,18 @@ include 'header.php';
   </div>
 </div>
 
+<!-- <div class="row">
+<div class="col-xs-6 col-md-3">
+  <div class="text-center">
+      <a href="entergroup.php?gid=105"><img src="images/luoji.jpg" alt="..." class="img-circle"></a>
+      <div class="caption">
+        <a href="entergroup.php?gid=105"><h4>罗辑思维</h4></a>
+      </div>
+  </div>
+  </div>
+
+</div> -->
+
   </div>
 </div
 <?php 		

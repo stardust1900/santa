@@ -7,7 +7,7 @@ if(isset($_POST['code']) && isset($_POST['group_id'])) {
 	$user_id = $_SESSION['login_uid'];
 	$code = $_POST['code'];
 	$group_id = $_POST['group_id'];
-	$mysql = new SaeMysql();
+	$mysql = new SaeMysql(false);//传入false不做读写分离，防止查不到写入的数据
 	$sql = "select * from groups where id=".$mysql->escape($group_id);
 	$group = $mysql->getLine($sql);
 	if($group) {
